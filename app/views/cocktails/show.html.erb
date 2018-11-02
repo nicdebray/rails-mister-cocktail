@@ -1,6 +1,11 @@
 <h1>Your cocktail</h1>
 
-<%= @cocktail.name %>
+<p><%= @cocktail.name %></p>
+<p><%= @doses %></p>
 
 <%= link_to "See all", cocktails_path %>
 <%= link_to "Create a new one", new_cocktail_path %>
+<%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "Delete", cocktail_path,
+method: :delete,
+data: { confirm: "Are you sure?"} %>

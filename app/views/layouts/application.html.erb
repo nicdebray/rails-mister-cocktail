@@ -12,8 +12,51 @@
 </head>
 
 <body>
-  <%= yield %>
-  <%= javascript_include_tag "application" %>
-  <%= javascript_pack_tag "application" %>
+
+  <div class="navbar-wagon">
+    <!-- Logo -->
+    <a href="/cocktails" class="navbar-wagon-brand">
+      <%= image_tag "logo-cocktail.png" %>
+    </a>
+
+    <!-- Right Navigation -->
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+      <a target="_blank" href="https://alcooliquesanonymes.be/" class="navbar-wagon-item navbar-wagon-link">Community</a>
+      <a target="_blank" href="http://3.bp.blogspot.com/-2-VxKrOnOWs/U8zgYIzC5_I/AAAAAAAAWjY/fb-Kr-XQ-pw/s1600/chuck-norris-dont-write-code.jpg" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+
+      <!-- Profile picture with dropdown list -->
+      <div class="navbar-wagon-item">
+        <div class="dropdown">
+
+          <%= image_tag "pirate-avatar.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: {toggle: "dropdown"} %>
+          <!-- <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"> -->
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dropdown appearing on mobile only -->
+    <div class="navbar-wagon-item hidden-md hidden-lg">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Host</a></li>
+          <li><a href="#">Trips</a></li>
+          <li><a href="#">Messagese</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Content -->
+  <div class="container">
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_pack_tag "application" %>
+  </div>
 </body>
 </html>
